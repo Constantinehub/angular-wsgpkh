@@ -1,0 +1,8 @@
+<h1>{{title}}</h1>
+<div class="wrap">
+  <form class="form" [formGroup]="yourNumber">
+    <label for="number" class="form-label">Please enter anything number</label>
+    <input type="number" pattern="0-9" id="number" class="form-input" formControlName="number" (keyup)="getInputData(yourNumber.controls['number'].value)">
+  </form>
+  <div class="result">{{inputData | async}}</div>
+</div>
